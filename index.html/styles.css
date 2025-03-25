@@ -1,0 +1,37 @@
+body{
+    font-family: Arial, sans-serif;
+    text-align:center;
+    margin-top: 50px;
+    background-color: lightgrey;
+
+}
+
+#quote{
+    font-size: 1.5em;
+    margin: 20px;
+    font-weight: bold;
+
+}
+
+#author{
+    font-size: 1.2em;
+    color: gray;
+
+}
+
+button{
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+
+}
+
+button:hover{
+    background-color: 0056b3;
+
+}
