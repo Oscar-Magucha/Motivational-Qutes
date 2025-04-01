@@ -1,49 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motivational Quotes</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        #quote {
-            font-size: 1.5em;
-            margin: 20px;
-        }
-        #author {
-            font-size: 1.2em;
-            color: gray;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 1em;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motivational Quotes</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="container">
+    <h1>Motivational Quotes</h1>
+    
+    <!-- Form to add a new quote -->
+    <form id="quoteForm">
+      <input type="text" id="quoteInput" placeholder="Enter a motivational quote" required>
+      <button type="submit">Add Quote</button>
+    </form>
 
-    <h1>Daily Motivation</h1>
-    <p id="quote">Click the button to get a motivational quote.</p>
-    <p id="author"></p>
-    <button onclick="getQuote()">Get Quote</button>
+    <!-- Section to display quotes from the API -->
+    <h2>Inspiring Quotes</h2>
+    <ul id="quoteList"></ul>
 
-    <script>
-        async function getQuote() {
-            try {
-                let response = await fetch("http://localhost:3000/quote");
-                let data = await response.json();
-                document.getElementById("quote").textContent = `"${data.text}"`;
-                document.getElementById("author").textContent = `- ${data.author}`;
-            } catch (error) {
-                console.error("Error fetching quote:", error);
-            }
-        }
-    </script>
+    <!-- Section to display cart -->
+    <h2>Your Cart</h2>
+    <ul id="cartList"></ul>
+  </div>
 
+  <script src="app.js"></script>
 </body>
 </html>
